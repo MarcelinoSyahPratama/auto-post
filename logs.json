@@ -1,0 +1,19 @@
+{
+  "akun": [
+    {
+      "akun": "annisamelani001@gmail.com",
+      "jumlah": 1,
+      "berhasil": 1,
+      "gagal": 0,
+      "mulai": "11.16.43",
+      "selesai": "11.17.22"
+    }
+  ],
+  "barang": [
+    {
+      "akun": "annisamelani001@gmail.com",
+      "kode": "AXS-006",
+      "status": "berhasil"
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <base href="/">
+    <script src="./fa.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <title>Skipper Auto Post</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pl-4 fixed-top">
+        <a class="navbar-brand" href="#">auto-Post</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <h6 class="text-heading text-primary">DATA ACCOUNTS</h6>
+        <a href="/google.html">
+            <p class="sub-heading "><i class="fab fa-facebook"></i> Facebook Accounts</p>
+        </a>
+        <h6 class="text-heading text-primary">INVENTORY</h6>
+        <a href="/indexing.html">
+            <p class="sub-heading "><i class="fas fa-server"></i> Item</p>
+        </a>
+        <div data-toggle="modal" data-target="#path">
+            <p class="sub-heading "><i class="fas fa-map-marker-alt"></i> Path Image</p>
+        </div>
+        <h6 class="text-heading text-primary">CRAWLING</h6>
+        <a href="/log-lengkap.html">
+            <p class="sub-heading "><i class="fas fa-spider"></i> Crawling</p>
+        </a>
+        <h6 class="text-heading text-primary">Task Manager</h6>
+        <a href="/schedule.html">
+            <p class="sub-heading "><i class="fas fa-folder-tree"></i> Schedule</p>
+        </a>
+        <!--<h6 class="text-heading text-primary">MORE ACTION</h6>
+        <div data-toggle="modal" data-target="#add-akun" class="add">
+            <p class="sub-heading "><i class="fas fa-user-plus"></i>Add Account User</p>
+        </div>
+        <div class="logout">
+            <p class="sub-heading "><i class="fas fa-sign-out-alt"></i>Sign Out</p>
+        </div>-->
+
+    </div>
+    <!-- end sidebar -->
+
+    <!-- content -->
+    <div class="content">
+        <div class="google-account">
+            <div class="google-icon">
+                <img src="/img/facebook.png" alt="">
+            </div>
+            <h6>Facebook Accounts</h6>
+            <p class="text-secondary">Add your facebook accounts here!</p>
+        </div>
+        <div class="data-table">
+            <div class="container-fluid" style="padding: 15px;">
+                <div class="row">
+                    <div class="dropdown ml-3">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-plus"></i> add</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#file">Add Via
+                                File(.xlsx)</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#manualy">Add Manualy</a>
+                        </div>
+                    </div>
+                    <div class="ml-auto mr-3">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                <select class="custom-select mr-sm-2 day" id="inlineFormCustomSelect">
+                                <option value="false" selected>Preview</option>
+                                <option value="true">Background</option>
+                                </select>
+                            </div>
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-rounded btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Play
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item btn-play" >Post Iventory</button>
+                                <button class="dropdown-item btn-crawling" >Crawling Iventory</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-rounded btn-success btn-pause none list-button"><i class='fas fa-pause'></i></button>
+                        <button class="btn btn-rounded btn-success btn-resume none list-button"><i class='fas fa-play'></i></button>
+                        <button class="btn btn-rounded btn-danger btn-stop none list-button"><i class="fas fa-stop"></i></button>
+                        <button class="btn btn-primary  btn-saveAkun list-button" aria-label="saveAkun"><i class="fas fa-save"></i></button>
+                        <button class="btn btn-rounded btn-warning btn-edit-all list-button " data-toggle="modal"
+                            data-target="#akun"><i class="fas fa-pen-alt"></i></button>
+                        <button class="btn btn-rounded btn-secondary btn-delete-all list-button"><i
+                                class="fas fa-eraser"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="row mt-3 row-table">
+                    <div class="col" style="height: 320px;overflow-y: scroll;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" width="30px">no</th>
+                                    <th scope="col" width="60px"><input type="checkbox" class="chekedAll"
+                                            style="margin-left: 10px;"></th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Password</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-log">
+
+        </div>
+    </div>
+    <!-- end content -->
+
+
+    <!-- Modal File-->
+    <div class="modal fade" id="file" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Facebook Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost:3000/convert/account" method="post" enctype="multipart/form-data">
+                        <div class="custom-file">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile04"
+                                    aria-describedby="inputGroupFileAddon04" name="filename" required accept=".xlsx">
+                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                            </div>
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <input type="hidden" name="id" value="" class="id_user">
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-close" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-success">save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal manualy-->
+    <div class="modal fade" id="manualy" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Facebook Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost:3000/add/account" method="post">
+                        <div class="custom-file">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Username</span>
+                                </div>
+                                <input type="text" class="form-control" name="username">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Password</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="password" name="password"
+                                    aria-describedby="basic-addon1">
+                                <input type="hidden" name="id" value="" class="id_user">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-close" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-success">save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal add account-->
+    <div class="modal fade" id="add-akun" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add User Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost:3000/add/account/user" method="post">
+                        <div class="custom-file">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Username</span>
+                                </div>
+                                <input type="text" class="form-control" name="username">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Password</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="password" name="password"
+                                    aria-describedby="basic-addon1">
+                                <input type="hidden" name="level" value="" class="level">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-close" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-success">save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal path -->
+    <div class="modal fade" id="path" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Set Path Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost:3000/add/path" method="post">
+                        <div class="custom-file">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Path saat ini</span>
+                                </div>
+                                <input type="text" class="form-control path" aria-label="Username" name="username"
+                                    aria-describedby="basic-addon1" readonly value="">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Set Path</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="password" name="path"
+                                    aria-describedby="basic-addon1">
+                                <input type="hidden" name="id_user" value="" class="id_user">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-close" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-success">save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal edit akun -->
+    <div class="modal fade" id="akun" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Data Akun</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="post" class="modal-edit-akun">
+                    <div class="modal-body modal-data">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-close" data-dismiss="modal">cancel</button>
+                        <button type="submit" class="btn btn-success btn-save-akun">save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="google.js"></script>
+    <script src="run.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+        if (localStorage.getItem('ls') === "true") {
+            document.querySelector('.sidebar').classList.remove('sidebar-none')
+            document.querySelector('.sidebar').classList.add('sidebar-block')
+            document.querySelector('.content').classList.remove('table-none')
+            document.querySelector('.table').classList.remove('table-full')
+            document.querySelector('.row-table').classList.remove('.row-table-none')
+            $('.sidebar').html(` <h6 class="text-heading text-primary">DATA ACCOUNTS</h6>
+    <a href="/google.html">
+        <p class="sub-heading "><i class="fab fa-facebook"></i> Facebook Accounts</p>
+    </a>
+    <h6 class="text-heading text-primary">INVENTORY</h6>
+    <a href="/indexing.html">
+        <p class="sub-heading "><i class="fas fa-server"></i> Item</p>
+    </a>
+    <div data-toggle="modal" data-target="#path">
+        <p class="sub-heading "><i class="fas fa-map-marker-alt"></i> Path Image</p>
+    </div>
+    <h6 class="text-heading text-primary">CRAWLING</h6>
+        <a href="/log-lengkap.html">
+            <p class="sub-heading "><i class="fas fa-spider"></i> Crawling</p>
+        </a>
+        <h6 class="text-heading text-primary">Task Manager</h6>
+        <a href="/schedule.html">
+            <p class="sub-heading "><i class="fas fa-calendar-alt"></i> Schedule</p>
+        </a>`)
+
+        } else if (localStorage.getItem('ls') === "false") {
+            document.querySelector('.sidebar').classList.add('sidebar-none')
+            document.querySelector('.sidebar').classList.remove('sidebar-block')
+            document.querySelector('.content').classList.add('table-none')
+            document.querySelector('table').classList.add('table-full')
+            document.querySelector('.row-table').classList.add('.row-table-none')
+            $('.sidebar').html(`  <a href="/google.html">
+    <p class="sub-heading "><i class="fab fa-facebook"></i></p>
+</a>
+<a href="/indexing.html">
+    <p class="sub-heading "><i class="fas fa-server"></i></p>
+</a>
+<div data-toggle="modal" data-target="#path">
+    <p class="sub-heading "><i class="fas fa-map-marker-alt"></i></p>
+</div>
+<a href="/google.html">
+    <p class="sub-heading "><i class="fas fa-folder-tree"></i></p>
+        </a>
+        <a href="/log-lengkap.html">
+            <p class="sub-heading "><i class="fas fa-spider"></i></p>
+            </a>
+        <a href="schedule.html">
+        <p class="sub-heading "><i class="fas fa-calendar-alt"></i></p>
+        </a>`)
+
+
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            let socket = io.connect('http://localhost:3000', { path: '/socket.io' })
+
+            socket.on('logs', function (results) {
+                let code = "";
+                let data = results.akun;
+                data.forEach((akun) => {
+                    code += `
+                    <ul>
+                        <li>${akun.akun}</li>
+                        <li>Posting : ${akun.jumlah} </li>
+                        <li>Berhasil : ${akun.berhasil}</li>
+                        <li>Gagal : ${akun.gagal}</li>
+                        <li>Start : ${akun.mulai}</li>
+                        <li>Stop : ${akun.selesai}</li>
+                    </ul>
+                `
+                })
+                $('.row-log').html(code);
+            })
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
